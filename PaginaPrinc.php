@@ -8,7 +8,10 @@
 </head>
 <body>
     <?php
+    $var = "Hello";
 echo "<h1>Merchan es tonto</h1>"
+echo $var
+
 ?>
 </body>
 </html>
