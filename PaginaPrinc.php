@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-echo "<h1>Merchan es tonto</h1>"
+<?php
+$a=2;
+$b=5; 
+$c=8;
+
+$z=$a+$b+$c;
+echo $z;
+echo $a;
+echo $b;
 ?>
-</body>
-</html>
