@@ -1,10 +1,11 @@
 <?php
-$a=2;
-$b=5; 
-$c=8;
-
-$z=$a+$b+$c;
-echo $z;
-echo $a;
-echo $b;
+$conexion=mysqli_connect('localhost','root','','torneo');
+$consulta="select codCharacter, nombre from characters";
+$tabla=mysqli_query($conexion,$consulta) or die (mysql_error());
+echo "<table>";
+while ($fila=mysqli_fetch_array($consulta)) 
+{
+    echo "<tr>".$fila[1] . " " . $fila[2]."</tr>". "</br>";
+}
+echo "</table>";
 ?>
