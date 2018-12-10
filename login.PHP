@@ -1,4 +1,13 @@
 <?php
+//Se explica lo que ocurre si se pulsa el boton de submit.
+if(isset($_POST['btSubir']))
+{
+    $usuario = $_POST['txtUsuario'];
+    $contrasena = $_POST['txtContra'];
+}
+//Comprobar si los valores de inicio son correctos mediante javascript y 
+//mediante una llamada a la base de datos.
+
 
 ?>
 
@@ -18,28 +27,37 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/tooplate.css">
+    <script>
+    function validar(usu,contra) {
+        if (usu) {
+            
+        }
+    }
+    </script>
+    
 </head>
 
 <body id="login">
     <div class="container">
         <div class="row tm-register-row tm-mb-35">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 tm-login-l">
-                <form action="PaginaPrinc.php" method="post" class="tm-bg-black p-5 h-100">
+                <form action="" method="post" class="tm-bg-black p-5 h-100">
                     <div class="input-field">
-                        <input placeholder="Username" id="username" name="username" type="text" class="validate">
+                        <input placeholder="Username" id="username" name="txtUsuario" type="text" class="validate">
                     </div>
                     <div class="input-field mb-5">
-                        <input placeholder="Password" id="password" name="password" type="password" class="validate">
+                        <input placeholder="Password" id="password" name="txtContra" type="password" class="validate">
                     </div>
                     <div class="tm-flex-lr">
                         <a href="#" class="white-text small">Forgot Password?</a>
-                        <button type="submit" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Login</button>
+                        <button onclick="validar(username.value,password.value)" id="btSubir" type="submit" name="btSubir" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Login</button>
                     </div>
                 </form>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 tm-login-r">
                 <header class="font-weight-light tm-bg-black p-5 h-100">
                     <h3 class="mt-0 text-white font-weight-light">DBFZ 23RD TOURNAMENT</h3>
+                    <!-- estos dos parrafos se utilizaran para dar informacion de la pagina o lo que sea.-->
                     <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                     <p class="mb-0">Vestibulum neque neque, porttitor quis lacinia eu, iaculis id dui. Mauris quis velit lectus.</p>
                 </header>
