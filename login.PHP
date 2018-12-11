@@ -4,13 +4,18 @@ if(isset($_POST['btSubir']))
 {
     $usuario = $_POST['txtUsuario'];
     $contrasena = $_POST['txtContra'];
-}
+
 //Comprobar si los valores de inicio son correctos mediante javascript y 
 //mediante una llamada a la base de datos.
-
-
+$conexion=mysqli_connect('localhost','root','','torneo');
+$consulta="select name,password from usuarios where name='$usuario' and password='.$contrasena.'";
+$res=mysqli_query($conexion,$consulta) or die(mysql_error());
+$row=mysqli_fetch_array($consulta);
+}
+else 
+{
+ 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,18 +24,15 @@ if(isset($_POST['btSubir']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DBFZ 23RD TOURNAMENT</title>
-	<!--
-    Template 2105 Input
-	http://www.tooplate.com/view/2105-input
-	-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/tooplate.css">
     <script>
     function validar(usu,contra) {
-        if (usu) {
-            
+        if (usu.length==0 || contra.length==0){
+           document.getElementById('salida').innerHTML= '<p style="color:red"> Debes introducir información en los dos campos</p>';
+            //SE ROMPE EL PROGRAMA
         }
     }
     </script>
@@ -50,7 +52,7 @@ if(isset($_POST['btSubir']))
                     </div>
                     <div class="tm-flex-lr">
                         <a href="#" class="white-text small">Forgot Password?</a>
-                        <button onclick="validar(username.value,password.value)" id="btSubir" type="submit" name="btSubir" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Login</button>
+                        <button onclick="validar(username.value,password.value);return false" id="btSubir" type="submit" name="btSubir" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Login</button>
                     </div>
                 </form>
             </div>
@@ -59,7 +61,7 @@ if(isset($_POST['btSubir']))
                     <h3 class="mt-0 text-white font-weight-light">DBFZ 23RD TOURNAMENT</h3>
                     <!-- estos dos parrafos se utilizaran para dar informacion de la pagina o lo que sea.-->
                     <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                    <p class="mb-0">Vestibulum neque neque, porttitor quis lacinia eu, iaculis id dui. Mauris quis velit lectus.</p>
+                    <p class="mb-0" id="salida"></p>
                 </header>
             </div>
         </div>
@@ -79,3 +81,8 @@ if(isset($_POST['btSubir']))
 </body>
 
 </html>
+<?php
+}
+
+?>
+
