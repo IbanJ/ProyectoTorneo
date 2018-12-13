@@ -8,9 +8,15 @@ if(isset($_POST['btSubir']))
 //Comprobar si los valores de inicio son correctos mediante javascript y 
 //mediante una llamada a la base de datos.
 $conexion=mysqli_connect('localhost','root','','torneo');
-$consulta="select name,password from usuarios where name='$usuario' and password='.$contrasena.'";
+$PR_validUser="call PR_validUser(:'$usuario','$contrasena',@salida)";
 $res=mysqli_query($conexion,$consulta) or die(mysql_error());
-$row=mysqli_fetch_array($consulta);
+while($row=mysqli_fetch_array($consulta))
+{
+    if ($consulta['name'] ) {
+        # code...
+    }
+}
+
 }
 else 
 {
