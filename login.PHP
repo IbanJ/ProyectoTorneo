@@ -19,12 +19,9 @@ if(isset($_POST['btSubir']))
         $_SESSION['codUser'] = $fila['codUser'];
         $_SESSION['name'] = $fila['name'];
         $_SESSION['conectado'] = 1;
-        #$_SESSION['nivelAdmin'] = $fila['nivelAdmin'];
-        header ('Location: PaginaPrinc.php');
-        #echo '<p>Vd ser&aacute; redirigido a la p&aacute;gina que originalmente ha solicitado.</p>';
-        #echo '<p>Si su navegador no le redirige correctamente, ' .
-        #    '<a href="' . $redirect . '">haga click aqu&iacute;</a>.</p>';
-        #mysqli_free_result($res);       
+        #Iban aqui te falta modificar esto para que coincida con en la BD
+        $_SESSION['nivelAdmin'] = $fila['nivelAdmin'];
+        header ('Location: PaginaPrinc.php');  
         
     } 
     else 
@@ -55,11 +52,14 @@ if(isset($_POST['btSubir']))
     <script>
     function validar(usu,contra) {
         if (usu.length==0 || contra.length==0){
-           document.getElementById('salida').innerHTML= '<p style="color:red"> Debes introducir información en los dos campos</p>';
+           document.getElementById('salida').innerHTML= '<p style="color:red"> Debes introducir información en los dos campos</p>';}
+        
             //SE ROMPE EL PROGRAMA
-        else
-           document.submmit;
+        else{
+            document.submmit;
         }
+           
+        
     }
     </script>
     
