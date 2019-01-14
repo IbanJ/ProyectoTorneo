@@ -98,7 +98,7 @@ if(isset($_POST['btSubir']))
         </div>
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ml-auto mr-0 text-center">
-                <a href="register.html" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Create New Account</a>
+                <a href="register.php" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Create New Account</a>
             </div>
         </div>
         <footer class="row tm-mt-big mb-3">
