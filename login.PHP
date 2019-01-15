@@ -1,5 +1,6 @@
 <?php
 session_start();
+$error="";
 //Se explica lo que ocurre si se pulsa el boton de submit.
 if(isset($_POST['btSubir']))
 {
@@ -21,8 +22,7 @@ if(isset($_POST['btSubir']))
         $_SESSION['conectado'] = 1;
         #Iban aqui te falta modificar esto para que coincida con en la BD
         $_SESSION['nivelAdmin'] = $fila['nivelAdmin'];
-        header ('Location: PaginaPrinc.php');  
-        
+        header ('Location: PaginaPrinc.php');          
     } 
     else 
     {
@@ -56,7 +56,8 @@ if(isset($_POST['btSubir']))
         
             //SE ROMPE EL PROGRAMA
         else{
-            document.submmit;
+            echo 'naranjas';
+            // document.submmit;
         }
            
         
