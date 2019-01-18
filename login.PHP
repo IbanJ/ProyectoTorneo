@@ -55,12 +55,9 @@ if(isset($_POST['btSubir']))
            document.getElementById('salida').innerHTML= '<p style="color:red"> Debes introducir información en los dos campos</p>';}
         
             //SE ROMPE EL PROGRAMA
-        else{
-            echo 'naranjas';
-            // document.submmit;
-        }
-           
-        
+    }
+    else {
+        echo "okay"
     }
     </script>
     
