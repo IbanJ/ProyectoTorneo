@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['btSubir']))
 {
-header ('Location: login.PHP');
+    header ('Location: login.PHP');
 }
 ?>
 
@@ -24,18 +24,19 @@ header ('Location: login.PHP');
     <script>
     function validar(usu,nick,contra,confpass) {
         if (usu.length==0 || nick.length==0 || contra.length==0 || confpass.length==0){
-           document.getElementById('salida').innerHTML= '<p style="color:red"> Debes introducir información en los cuatro campos</p>';}
+           document.getElementById('salida').innerHTML= '<p style="color:red"> Debes introducir información en los cuatro campos</p>';
+           return false;
+           }
         
             //SE ROMPE EL PROGRAMA
         if (contra != confpass) {
             document.getElementById('salida').innerHTML= '<p style="color:red"> Las contraseñas no coinciden</p>';
+            return false;
         }
         if (contra.length<4) {
             document.getElementById('salida').innerHTML= '<p style="color:red"> La contraseña debe tener al menos 4 carácteres</p>';
-        }
-        else {
-            echo "go"
-        }
+            return false;
+        } 
     }
     </script>
 </head>
@@ -44,7 +45,7 @@ header ('Location: login.PHP');
     <div class="container">
         <div class="row tm-register-row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 tm-register-col-l">
-                <form action="" method="post">
+                <form id="miForm" action="" method="post">
                     <div class="input-field">
                         <input placeholder="Usuario" id="usuario" name="txtUser" type="text" class="validate">
                     </div>
@@ -58,7 +59,7 @@ header ('Location: login.PHP');
                         <input placeholder="Confirmar Contraseña" id="confpass" name="txtConfpass" type="password" class="validate">
                     </div>
                     <div class="text-right mt-4">
-                        <button onclick="validar(usuario.value,nickname.value,password.value,confpass.value);return false" name="btSubir" type="submit" id="btSubir" class="waves-effect btn-large btn-large-white px-4 black-text">SUBMIT</button>
+                        <button onsubmit="validar(usuario.value,nickname.value,password.value,confpass.value)" name="btSubir" type="submit" id="btSubir" class="waves-effect btn-large btn-large-white px-4 black-text">SUBMIT</button>
                     </div>
                 </form>
             </div>
