@@ -11,27 +11,27 @@ if(isset($_POST['btSubir']))
     //mediante una llamada a la base de datos.
     $conexion=mysqli_connect('localhost','root','','torneo');
     #$PR_validUser="call PR_validUser('$usuario','$contrasena')";
-    $consulta="SELECT codUser,name,password FROM usuarios WHERE name='$usuario' and password='$contrasena'";
+    $consulta="SELECT codUser,user,password FROM usuarios WHERE user='$usuario' and password='$contrasena'";
     $res=mysqli_query($conexion,$consulta) or die(mysql_error());
     $numrows=mysqli_num_rows($res);
     if ($numrows > 0) 
     {
         $fila = mysqli_fetch_assoc($res);
         $_SESSION['codUser'] = $fila['codUser'];
-        $_SESSION['name'] = $fila['name'];
+        $_SESSION['user'] = $fila['user'];
         $_SESSION['conectado'] = 1;
         #Iban aqui te falta modificar esto para que coincida con en la BD
-        $_SESSION['nivelAdmin'] = $fila['nivelAdmin'];
+        $_SESSION['admin'] = $fila['admin'];
         header ('Location: PaginaPrinc.php');          
     } 
     else 
     {
         // Establecemos las variables de sesión explícitamente para asegurarnos
-        $_SESSION['name'] = '';
+        $_SESSION['user'] = '';
         $_SESSION['conectado'] = 0;
-        $_SESSION['nivelAdmin'] = 0;
+        $_SESSION['admin'] = 0;
 
-        $error = 'Ha suministrado un nombre de usuario incorrecto';
+        $error = 'Ha suministrado un nombre de usuario o contraseña incorrecta';
     }
 
 }
@@ -57,7 +57,7 @@ if(isset($_POST['btSubir']))
             //SE ROMPE EL PROGRAMA
     }
     else {
-        echo "okay"
+        echo "okay";
     }
     </script>
     

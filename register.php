@@ -1,7 +1,29 @@
 <?php
+session_start();
+$error="";
 if(isset($_POST['btSubir']))
 {
-    header ('Location: login.PHP');
+    $usuario = $_POST['txtUser'];
+    $nick = $_POST['txtNick'];
+    $pass = $_POST['txtPass'];
+
+    $conexion=mysqli_connect('localhost','root','','torneo');
+    #$PR_validUser="call PR_validUser('$usuario','$contrasena')";
+    $consulta="SELECT user FROM usuarios WHERE user='$nick'";
+    $res=mysqli_query($conexion,$consulta) or die(mysql_error());
+    $numrows=mysqli_num_rows($res);
+    if ($numrows > 0)
+    {
+      $error="Usuario '$usuario' en uso";
+        
+    }
+    else {
+        $insert="INSERT INTO usuarios (user,nickname,password) VALUES ($usuario,$nick,$pass)";
+        
+
+        header ('Location: login.PHP');
+    }
+      
 }
 ?>
 
@@ -37,6 +59,7 @@ if(isset($_POST['btSubir']))
             document.getElementById('salida').innerHTML= '<p style="color:red"> La contraseña debe tener al menos 4 carácteres</p>';
             return false;
         } 
+        document.submit();
     }
     </script>
 </head>
@@ -59,14 +82,19 @@ if(isset($_POST['btSubir']))
                         <input placeholder="Confirmar Contraseña" id="confpass" name="txtConfpass" type="password" class="validate">
                     </div>
                     <div class="text-right mt-4">
-                        <button onsubmit="validar(usuario.value,nickname.value,password.value,confpass.value)" name="btSubir" type="submit" id="btSubir" class="waves-effect btn-large btn-large-white px-4 black-text">SUBMIT</button>
+                        <button onclick="validar(usuario.value,nickname.value,password.value,confpass.value); return false;" name="btSubir" type="submit" id="btSubir" class="waves-effect btn-large btn-large-white px-4 black-text">SUBMIT</button>
                     </div>
                 </form>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 tm-register-col-r">
                 <header class="mb-5">
                     <h3 class="mt-0 text-white">REGISTRATE</h3>
-                    <p class="grey-text">56trgfv</p>
+                    <p class="grey-text">
+                    <?php
+                    if(isset($error))
+                        {echo $error;}
+                    ?>
+                    </p>
                     <p class="mb-0" id="salida"></p>
                 </header>
 
