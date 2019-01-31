@@ -9,20 +9,28 @@ if(isset($_POST['btSubir']))
 
     $conexion=mysqli_connect('localhost','root','','torneo');
     #$PR_validUser="call PR_validUser('$usuario','$contrasena')";
-    $consulta="SELECT user FROM usuarios WHERE user='$nick'";
-    $res=mysqli_query($conexion,$consulta) or die(mysql_error());
-    $numrows=mysqli_num_rows($res);
-    if ($numrows > 0)
-    {
-      $error="Usuario '$usuario' en uso";
-        
-    }
-    else {
-        $insert="INSERT INTO usuarios (user,nickname,password) VALUES ($usuario,$nick,$pass)";
-        
-
+    $consulta1="SELECT nickname FROM usuarios WHERE nickname='$nick'";
+    $res1=mysqli_query($conexion,$consulta1) or die(mysql_error());
+    $numrows1=mysqli_num_rows($res1);
+    $consulta2="SELECT user FROM usuarios WHERE user='$usuario'";
+    $res2=mysqli_query($conexion,$consulta2) or die(mysql_error());
+    $numrows2=mysqli_num_rows($res2);
+        if ($numrows1 > 0)
+        {
+        $error="Nickname '$nick' en uso";
+            
+        }
+        else if ($numrows2 > 0)
+        {
+        $error="Usuario '$usuario' en uso";
+            
+        }
+    
+        else {
+        mysqli_query($conexion,"CALL pr_insertUsu ('$usuario','$nick','$pass',0)");
         header ('Location: login.PHP');
-    }
+        }
+    
       
 }
 ?>
