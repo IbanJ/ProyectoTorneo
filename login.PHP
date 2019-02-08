@@ -22,7 +22,7 @@ if(isset($_POST['btSubir']))
         $_SESSION['conectado'] = 1;
         #Iban aqui te falta modificar esto para que coincida con en la BD
         $_SESSION['admin'] = $fila['admin'];
-        header ('Location: PaginaPrinc.php');          
+        header ('Location: Main.php');          
     } 
     else 
     {
