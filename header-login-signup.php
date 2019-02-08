@@ -26,11 +26,9 @@
 
 		<h1><a href="#">Dragonball<span>FIGHTERZ</span></a></h1>
 
-		<nav>
-			<a href="#">Home</a>
-			<a href="#" class="selected">Blog</a>
-			<a href="#">Pricing</a>
-		</nav>
+		<form method="post" action="#">
+			<input type="search" placeholder="Search!" name="search">
+		</form>
 
 		<ul>
 			<li><a href="login.PHP">Login</a></li>
@@ -40,28 +38,27 @@
 	</div>
 
 </header>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+	$(document).ready(function() {
+
+		$('.header-login-signup form').on('click', function(e) {
+
+			// If the form (which is turned into the search button) was
+			// clicked directly, toggle the visibility of the search box.
+
+			if(e.target == this) {
+				$(this).find('input').toggle();
+			}
+
+		});
+	});
+
+</script>
 
 <!-- The content of your page would go here. -->
 
-
-<div class="menu">
-
-	<img src="assets/demo-arrow.png" alt="arrow" height="120">
-
-	<h1>Freebie: 7 Responsive Header Templates</h1>
-	<h2><a href="http://tutorialzine.com/2015/02/freebie-7-responsive-header-templates/">Download</a></h2>
-
-	<ul>
-		<li><a href="index.html">Basic</a></li>
-		<li><a href="header-basic-light.html">Basic Light</a></li>
-		<li><a href="header-fixed.html">Fixed</a></li>
-		<li><a href="header-login-signup.html" class="active">Login/Sign up</a></li>
-		<li><a href="header-search.html">Search</a></li>
-		<li><a href="header-second-bar.html">Second Bar</a></li>
-		<li><a href="header-user-dropdown.html">User Dropdown</a></li>
-	</ul>
-
-</div>
 </body>
 
 </html>

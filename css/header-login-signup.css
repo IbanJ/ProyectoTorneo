@@ -23,7 +23,7 @@
 }
 
 .header-login-signup .header-limiter h1 span {
-	color: #5383d3;
+	color: #caaf13;
 }
 
 /* The navigation links */
@@ -58,13 +58,74 @@
 	color: #608bd2;
 }
 
+/* The search box */
+
+.header-login-signup .header-limiter form {
+	float:right;
+	position: relative;
+	right: 30px;
+	margin-left: 40px;
+	border-radius: 3px;
+	background-color:  #3a3c3e;
+	width: 44px;
+	height: 39px;
+	cursor: pointer;
+
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/* CSS search icon */
+
+.header-login-signup .header-limiter form:before {
+	position: absolute;
+	content: '';
+	border-radius: 50%;
+	border: 2px solid #fff;
+	width: 9px;
+	height: 9px;
+	top: 12px;
+	left: 14px;
+}
+
+.header-login-signup .header-limiter form:after {
+	position: absolute;
+	content: '';
+	background-color: #fff;
+	width: 2px;
+	height: 8px;
+	top: 22px;
+	left: 26px;
+	-webkit-transform: rotate(-44deg);
+	-moz-transform: rotate(-44deg);
+	transform: rotate(-44deg);
+}
+
+/* The search box */
+
+.header-login-signup .header-limiter form input {
+	display: none;
+	position: absolute;
+	right: 42px;
+	padding: 11px 12px 9px;
+	border: none;
+	width: 210px;
+	border-radius: 2px 0 0 2px;
+	height: 39px;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
 /* Login/Sign up buttons */
 
 .header-login-signup .header-limiter ul {
 	font: 14px Arial, Helvetica, sans-serif;
 	list-style: none;
 	line-height: 1;
-	float: right;
+	float: left;
 }
 
 .header-login-signup .header-limiter ul li {
@@ -103,17 +164,14 @@
 		line-height: 1;
 	}
 
-	.header-login-signup .header-limiter nav {
-		margin: 0;
-		float: none;
-	}
-
-	.header-login-signup .header-limiter nav li a {
-		font-size: 13px;
-	}
-
 	.header-login-signup .header-limiter ul {
 		display: none;
+	}
+
+	.header-search .header-limiter form {
+		position: absolute;
+		top: 20px;
+		right: 20px;
 	}
 
 }
