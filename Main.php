@@ -11,9 +11,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Login, Sign up Header</title>
+	<title>Dragonball FIGHTERZ</title>
 
 	<link rel="stylesheet" href="css/header-login-signup.css">
+	<link rel="stylesheet" href="css/TablaJugadores.css">
 	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
 </head>
@@ -24,7 +25,7 @@
 
 	<div class="header-limiter">
 
-		<h1><a href="#">Dragonball<span>FIGHTERZ</span></a></h1>
+		<h1><a href="Main.php">Dragonball<span>FIGHTERZ</span></a></h1>
 
 		<form method="post" action="#">
 			<input type="search" placeholder="Search!" name="search">
@@ -58,6 +59,35 @@
 </script>
 
 <!-- The content of your page would go here. -->
+
+<div class="jugadores-izquierda">
+<table >
+<tr>
+<td>Mister Fister</td>
+<td>Broly</td>
+<td>A nobody</td>
+<td>Vegito</td>
+<td>Sez</td>
+<td>Rose</td>
+<td>Eren Jaeger</td>
+<td>Goku</td>
+</tr>
+<tr>
+<td>Leopoldo IV</td>
+<td>Ravi</td>
+<td>Gogeta</td>
+<td>Another nobody</td>
+<td>Merchan</td>
+<td>Iban</td>
+<td>Zamasu</td>
+<td>Vegeta</td>
+</tr>
+
+
+<table>
+
+</div>
+
 
 </body>
 
