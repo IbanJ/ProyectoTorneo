@@ -20,7 +20,26 @@
 </head>
 
 <body>
-
+<!--	
+<p>Mister Fister</p>
+				<p>Broly</p>
+				<p>A nobody</p>
+				<p>Vegito</p>
+				<p>Sez</p>
+				<p>Rose</p>
+				<p>Eren Jaeger</p>
+				<p>Goku</p>
+		</div>
+		<div class="jugadores-derecha">
+				<p>Leopoldo IV</p>
+				<p>Ravi</p>
+				<p>Gogeta</p>
+				<p>Another nobody</p>
+				<p>Merchan</p>
+				<p>Iban</p>
+				<p>Zamasu</p>
+				<p>Vegeta</p>
+-->
 <header class="header-login-signup">
 
 	<div class="header-limiter">
@@ -57,35 +76,30 @@
 	});
 
 </script>
-
+ 
 <!-- The content of your page would go here. -->
 
-<div class="jugadores-izquierda">
-<table >
-<tr>
-<td>Mister Fister</td>
-<td>Broly</td>
-<td>A nobody</td>
-<td>Vegito</td>
-<td>Sez</td>
-<td>Rose</td>
-<td>Eren Jaeger</td>
-<td>Goku</td>
-</tr>
-<tr>
-<td>Leopoldo IV</td>
-<td>Ravi</td>
-<td>Gogeta</td>
-<td>Another nobody</td>
-<td>Merchan</td>
-<td>Iban</td>
-<td>Zamasu</td>
-<td>Vegeta</td>
-</tr>
-
-
-<table>
-
+<div class="borde">
+		<div class="jugadores-izquierda">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+				<p>4</p>
+				<p>5</p>
+				<p>6</p>
+				<p>7</p>
+				<p>8</p>
+		</div>
+		<div class="jugadores-derecha">
+				<p>9</p>
+				<p>10</p>
+				<p>11</p>
+				<p>12</p>
+				<p>13</p>
+				<p>14</p>
+				<p>15</p>
+				<p>16</p>
+		</div>
 </div>
 
 

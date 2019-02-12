@@ -1,11 +1,15 @@
+.borde{
+    padding: 10px;
+    margin: 40px;
+    border: 1px solid rgb(28, 62, 136);
+    overflow: auto;
+}
 .jugadores-izquierda{
-    text-align: left;
+    float:left;
     font-family: arial, sans-serif;
 }
 .jugadores-derecha{
-    text-align: right;
+    margin: 10px;
+    float:right;
     font-family: arial, sans-serif;
 }
-table, th, td {
-    border: 1px solid black;
-  }
