@@ -88,8 +88,14 @@
 				<p>5</p>
 				<p>6</p>
 				<p>7</p>
-				<p>8</p>
+				<p>8</p>	
 		</div>
+		<div class="cuartos-iz">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+				<p>4</p>
+				</div>
 		<div class="jugadores-derecha">
 				<p>9</p>
 				<p>10</p>
@@ -98,7 +104,13 @@
 				<p>13</p>
 				<p>14</p>
 				<p>15</p>
-				<p>16</p>
+				<p>16</p>			
+		</div>
+		<div class="cuartos-der">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+				<p>4</p>
 		</div>
 </div>
 

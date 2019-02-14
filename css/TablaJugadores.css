@@ -1,9 +1,20 @@
 .borde{
     padding: 10px;
     margin: 40px;
+    width: 40%;
     border: 1px solid rgb(28, 62, 136);
     overflow: auto;
 }
+.cuartos-iz{
+    float:left;
+    padding: 25px;
+    text-align: center;
+}
+.cuartos-der{
+    float:right;
+    padding: 25px;
+}
+
 .jugadores-izquierda{
     float:left;
     font-family: arial, sans-serif;
